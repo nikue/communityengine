@@ -6,9 +6,6 @@ class User < ActiveRecord::Base
   include UrlUpload
   include FacebookProfile
   include TwitterProfile
-  
-  has_attached_file :photo,
-                    :storage => :s3
 
   include Rakismet::Model
   rakismet_attrs :author => :login, :comment_type => 'registration', :content => :description, :user_ip => :last_login_ip, :author_email => :email
