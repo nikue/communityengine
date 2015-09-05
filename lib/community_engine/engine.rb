@@ -1,5 +1,6 @@
 require "community_engine"
 require 'rails/all'
+require 'iso3166'
 
 module CommunityEngine
   class Engine < Rails::Engine
