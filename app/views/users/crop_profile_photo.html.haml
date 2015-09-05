@@ -16,19 +16,18 @@
   %br
   = f.primary :update.l
 
--content_for :end_javascript do
-  :javascript
-    jQuery(function($) {
-      // Settings for the cropper
-      minWidth = 300; // min width of crop area, also the starting width
-      minHeight = 200; // min height of crop area, also the starting height
-      previewRatio = 1/4; // i.e. preview to croppable ratio
-      bgColor = 'black';
-      bgOpacity = .4;
-      croppable_id = 'croppable'
-      preview_id = 'preview'
-      
-      // Then initialize the cropper, telling it where to find the croppable image's id and
-      // the preview div's id.
-      cropInit();
-    });
+:javascript
+  jQuery(function($) {
+    // Settings for the cropper
+    minWidth = 300; // min width of crop area, also the starting width
+    minHeight = 200; // min height of crop area, also the starting height
+    previewRatio = 1/4; // i.e. preview to croppable ratio
+    bgColor = 'black';
+    bgOpacity = .4;
+    croppable_id = 'croppable'
+    preview_id = 'preview'
+    
+    // Then initialize the cropper, telling it where to find the croppable image's id and
+    // the preview div's id.
+    cropInit();
+  });
