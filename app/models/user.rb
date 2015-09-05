@@ -3,6 +3,9 @@ require 'bcrypt'
 
 class User < ActiveRecord::Base
   extend FriendlyId
+  include UrlUpload
+  include FacebookProfile
+  include TwitterProfile
 
   friendly_id :login, :use => [:slugged, :finders], :slug_column => 'login_slug'
   
