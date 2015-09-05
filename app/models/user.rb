@@ -3,13 +3,9 @@ require 'bcrypt'
 
 class User < ActiveRecord::Base
   extend FriendlyId
-  include UrlUpload
-  include FacebookProfile
-  include TwitterProfile
 
-  include Rakismet::Model
-  rakismet_attrs :author => :login, :comment_type => 'registration', :content => :description, :user_ip => :last_login_ip, :author_email => :email
-
+  friendly_id :login, :use => [:slugged, :finders], :slug_column => 'login_slug'
+  
   MALE    = 'M'
   FEMALE  = 'F'
 
