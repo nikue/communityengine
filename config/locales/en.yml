@@ -1113,7 +1113,7 @@ en:
   #en: required_you_must_be_at_least_years_old_to_sign_up: "(Required: You must be at least %{min_age} years old to sign up.)"
   required_you_must_be_at_least_years_old_to_sign_up: "(Required: You must be at least %{min_age} years old to sign up.)"
   #en: required_your_username_must_not_contain_numerals_spaces_or_special_characters: "(Required: Your username must not contain spaces or special characters.)"
-  required_your_username_must_not_contain_numerals_spaces_or_special_characters: "(Required: Your username must not contain spaces or special characters.)"
+  required_your_username_must_not_contain_numerals_spaces_or_special_characters: "(Required: Your username must not contain special characters.)"
   #en: resend_my_activation_e_mail: Resend my activation e-mail
   resend_my_activation_e_mail: Resend my activation e-mail
   #en: resend_your_activation_e_mail: Resend your activation e-mail
@@ -1221,9 +1221,9 @@ en:
   #en: sign_up_for_a_: Sign up for a
   sign_up_for_a_: Sign up for a
   #en: sign_up_reason_1: Some reason to sign up
-  sign_up_reason_1: Some reason to sign up
+  sign_up_reason_1: Keep in touch with your course mates and tutors
   #en: sign_up_reason_2: Some reason to sign up
-  sign_up_reason_2: Some reason to sign up
+  sign_up_reason_2: Share job opportunities and get help when you need it
   #en: singular_posts: "%{count} post"
   singular_posts: "%{count} post"
   #en: site_members: "%{site} members"
@@ -1413,7 +1413,7 @@ en:
   #en: url: Url
   url: Url
   #en: username: Username
-  username: Username
+  username: Full Name
   #en: user: User
   user: User
   #en: user_information: %{site} User information
@@ -1435,7 +1435,7 @@ en:
   #en: user_vendor_offer: "<p>Describe the product or service you offer:<ul><li> Tell people what you do</li><li> Explain why you love your work</li><li> How can people contact you? What's your Web site?</li></ul></p>"
   user_vendor_offer: "<p>Describe the product or service you offer:<ul><li> Tell people what you do</li><li> Explain why you love your work</li><li> How can people contact you? What's your Web site?</li></ul></p>"
   #en: user_bio_help: "<p>Your bio is first thing people see on your profile. Some ideas:<ul><li> Describe your sense of style</li><li> Explain what you love about life.</li><li> What's the last thing you purchased for a friend?</li></ul></p>"
-  user_bio_help: "<p>Your bio is first thing people see on your profile. Some ideas:<ul><li> Describe your sense of style</li><li> Explain what you love about life.</li><li> What's the last thing you purchased for a friend?</li></ul></p>"
+  user_bio_help: "<p>Your bio is first thing people see on your profile. Some ideas:<ul><li> Describe your teaching or learning experience</li><li> Explain what you like about teaching.</li><li> Where are you now, and what are you doing?</li></ul></p>"
   #en: vendor_avatar_hint: "You may want to use your company logo, or a photo of one of your products. "
   vendor_avatar_hint: "You may want to use your company logo, or a photo of one of your products. "
   #en: view: View
