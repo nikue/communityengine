@@ -108,14 +108,6 @@ class UsersController < BaseController
   def update
     @metro_areas, @states = setup_locations_for(@user)
 
-    unless params[:metro_area_id].blank?
-      @user.metro_area  = MetroArea.find(params[:metro_area_id])
-      @user.state       = (@user.metro_area && @user.metro_area.state) ? @user.metro_area.state : nil
-      @user.country     = @user.metro_area.country if (@user.metro_area && @user.metro_area.country)
-    else
-      @user.metro_area = @user.state = @user.country = nil
-    end
-
     @user.tag_list = params[:tag_list] || ''
 
     if user_params
