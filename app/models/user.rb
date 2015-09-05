@@ -467,7 +467,7 @@ class User < ActiveRecord::Base
     end
 
     def requires_unique_login?
-      true
+      false
     end
 
     def omniauthed?
