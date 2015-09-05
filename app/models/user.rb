@@ -8,6 +8,25 @@ class User < ActiveRecord::Base
   
   MALE    = 'M'
   FEMALE  = 'F'
+  
+  begin
+    acts_as_authentic do |c|
+      c.transition_from_crypto_providers = CommunityEngineSha1CryptoMethod
+      c.crypto_provider = Authlogic::CryptoProviders::BCrypt
+
+      c.validates_length_of_password_field_options = { :within => configatron.authlogic.password_length, :if => :password_required? }
+      c.validates_length_of_password_confirmation_field_options = { :within => configatron.authlogic.password_length, :if => :password_required? }
+
+      c.validates_length_of_login_field_options = { :within => configatron.authlogic.login_length, :unless => :omniauthed? }
+      c.validates_format_of_login_field_options = { :with => configatron.regexes.login, :unless => :omniauthed? }
+
+      c.validates_length_of_email_field_options = { :within => configatron.authlogic.email_length, :if => :email_required? }
+      c.validates_format_of_email_field_options = { :with => configatron.regexes.email, :if => :email_required? }
+      c.validates_uniqueness_of_email_field_options :case_sensitive => configatron.authlogic.email_case_sensitive
+    end
+  rescue StandardError
+    puts 'Failed to initialize AuthLogic'
+  end  
 
   acts_as_taggable
   acts_as_moderated_commentable
@@ -24,7 +43,9 @@ class User < ActiveRecord::Base
 
   #validation
   validates_presence_of     :metro_area, :if => Proc.new { |user| user.state }
-
+  validates_uniqueness_of   :login, :if => :requires_unique_login?
+  validates_exclusion_of    :login, :in => Proc.new{ configatron.reserved_logins }
+  
   validate :valid_birthday, :if => :requires_valid_birthday?
   validate :check_spam
 
