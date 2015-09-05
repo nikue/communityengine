@@ -277,6 +277,7 @@ class UsersController < BaseController
 
   def welcome_invite
     @user = User.find(params[:id])
+    redirect_to user_path(@user)
   end
 
   def invite
